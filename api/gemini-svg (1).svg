@@ -1,0 +1,204 @@
+<svg id="kaiser-game-hud" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" style="max-width:920px; background:#080A0E; border-radius:8px; font-family:&#39;Malgun Gothic&#39;,&#39;Apple SD Gothic Neo&#39;,&#39;Noto Sans KR&#39;,sans-serif;">
+  <defs>
+    
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1219" />
+      <stop offset="100%" stop-color="#07090D" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A7B3E" />
+      <stop offset="100%" stop-color="#E2C07D" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="riskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B91C1C" />
+      <stop offset="100%" stop-color="#F87171" />
+    </linearGradient>
+
+    
+    <pattern id="tacticalGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.6" stroke-opacity="0.45" />
+    </pattern>
+    <pattern id="rebelHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#EF4444" stroke-width="2" stroke-opacity="0.35" />
+    </pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#000000" stroke-width="1.2" stroke-opacity="0.35" />
+    </pattern>
+
+    
+    <clipPath id="portraitClip">
+      <rect x="35" y="106" width="200" height="172" rx="3" />
+    </clipPath>
+  </defs>
+
+  
+  <rect x="2" y="2" width="916" height="456" rx="6" fill="url(#bgGrad)" stroke="#C5A059" stroke-width="1.5" stroke-opacity="0.75" />
+  <rect x="2" y="2" width="916" height="456" rx="6" fill="url(#tacticalGrid)" />
+  <path d="M 16 2 L 2 2 L 2 16 M 904 2 L 918 2 L 918 16 M 16 458 L 2 458 L 2 444 M 904 458 L 918 458 L 918 444" fill="none" stroke="#38BDF8" stroke-width="2.2" />
+
+  
+  <g id="hud-header">
+    <g transform="translate(20, 14)">
+      <rect x="0" y="0" width="40" height="40" rx="4" fill="#111827" stroke="#C5A059" stroke-width="1.2" />
+      <path d="M16 6 H24 L22 16 L34 14 V22 L22 20 L24 34 H16 L18 20 L6 22 V14 L18 16 Z" fill="#C5A059" />
+      <circle cx="20" cy="20" r="3.5" fill="#080A0E" stroke="#38BDF8" stroke-width="1.2" />
+    </g>
+    <text x="72" y="32" fill="#F8FAFC" font-size="15.5" font-weight="800" letter-spacing="1.2">VEREINIGTES KAISERREICH WALDEMAR</text>
+    <text x="72" y="50" fill="#94A3B8" font-size="11" letter-spacing="0.6">발데마르 통합제국 · K.A.I.S.E.R. 최고 통치 사령부 (행성 알테아 전략 상황판)</text>
+
+    <text id="hud-turn" x="898" y="31" text-anchor="end" fill="#E2C07D" font-size="12.5" font-weight="800">제국력 2048.03 // TURN 01</text>
+    <rect id="hud-alert-box" x="754" y="38" width="144" height="20" rx="3" fill="#0F293A" stroke="#38BDF8" stroke-width="1" />
+    <text id="hud-alert-text" x="826" y="52" text-anchor="middle" fill="#38BDF8" font-size="10.5" font-weight="800" letter-spacing="0.8">치안 등급: STUFE I</text>
+  </g>
+  <line x1="20" y1="66" x2="900" y2="66" stroke="#334155" stroke-width="1" />
+
+  
+  <g id="leader-panel">
+    <rect x="20" y="78" width="230" height="316" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#C5A059" stroke-width="1" stroke-opacity="0.5" />
+    <text x="35" y="97" fill="#E2C07D" font-size="10.5" font-weight="800" letter-spacing="1">SUPREME COMMANDER</text>
+    <circle cx="228" cy="93" r="3.5" fill="#38BDF8" />
+
+    
+    <rect x="35" y="106" width="200" height="172" rx="3" fill="#070A0F" stroke="#334155" stroke-width="1" />
+    
+    <g id="leader-fallback" opacity="0.65">
+      <circle cx="135" cy="166" r="28" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2" />
+      <path d="M82 268 C82 222, 188 222, 188 268 Z" fill="#1E293B" stroke="#C5A059" stroke-width="1.2" />
+      <text x="135" y="254" text-anchor="middle" fill="#64748B" font-size="9.5" font-weight="700">NO PORTRAIT SIGNAL</text>
+    </g>
+    
+    
+    
+    <rect x="35" y="106" width="200" height="172" rx="3" fill="url(#scanlines)" pointer-events="none" />
+    <path d="M 43 106 L 35 106 L 35 114 M 227 106 L 235 106 L 235 114 M 43 278 L 35 278 L 35 270 M 227 278 L 235 278 L 235 270" fill="none" stroke="#C5A059" stroke-width="1.8" />
+
+    
+    <rect x="35" y="287" width="200" height="18" rx="2" fill="#C5A059" fill-opacity="0.16" />
+    <text id="leader-title" x="135" y="300" text-anchor="middle" fill="#E2C07D" font-size="10.5" font-weight="700">제국 최고 집정관</text>
+
+    <text id="leader-name" x="135" y="325" text-anchor="middle" fill="#F8FAFC" font-size="16" font-weight="800">카를 폰 아이젠하르트</text>
+    <text id="leader-trait" x="135" y="344" text-anchor="middle" fill="#38BDF8" font-size="10.5">발할라-IX 코어 직결 권한</text>
+
+    
+    <rect x="35" y="355" width="200" height="27" rx="3" fill="#090D14" stroke="#1E293B" stroke-width="1" />
+    <text id="territory-summary" x="135" y="373" text-anchor="middle" fill="#CBD5E1" font-size="11" font-weight="700">영토 장악: 5 / 6 관구 (83.3%)</text>
+  </g>
+
+  
+  <g id="territory-map-panel">
+    <rect x="262" y="78" width="376" height="316" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#1E293B" stroke-width="1" />
+    <text x="278" y="97" fill="#CBD5E1" font-size="11.5" font-weight="800" letter-spacing="0.5">ALTHEA STRATEGIC MAP <tspan fill="#64748B" font-size="10">// 6대 행정관구 통제 현황</tspan></text>
+
+    
+    <rect x="276" y="106" width="348" height="252" rx="4" fill="#06090F" stroke="#334155" stroke-width="1" />
+    <line x1="276" y1="190" x2="624" y2="190" stroke="#1E293B" stroke-width="0.7" stroke-dasharray="3,3" />
+    <line x1="276" y1="274" x2="624" y2="274" stroke="#1E293B" stroke-width="0.7" stroke-dasharray="3,3" />
+    <line x1="392" y1="106" x2="392" y2="358" stroke="#1E293B" stroke-width="0.7" stroke-dasharray="3,3" />
+    <line x1="508" y1="106" x2="508" y2="358" stroke="#1E293B" stroke-width="0.7" stroke-dasharray="3,3" />
+    <circle cx="450" cy="232" r="95" fill="none" stroke="#38BDF8" stroke-width="0.6" stroke-opacity="0.22" />
+    <circle cx="450" cy="232" r="45" fill="none" stroke="#C5A059" stroke-width="0.6" stroke-opacity="0.25" />
+
+    
+    <g id="sector-s2">
+      <path id="poly-s2" d="M 355 116 L 462 114 L 498 134 L 472 158 L 392 158 L 348 140 Z" fill="#123047" stroke="#38BDF8" stroke-width="1.5" />
+      <text x="424" y="140" text-anchor="middle" fill="#E0F2FE" font-size="10" font-weight="800">S2 노르트그라트</text>
+    </g>
+
+    
+    <g id="sector-s3">
+      <path id="poly-s3" d="M 286 168 L 358 164 L 372 214 L 346 256 L 294 246 L 284 202 Z" fill="#123047" stroke="#38BDF8" stroke-width="1.5" />
+      <text x="328" y="212" text-anchor="middle" fill="#E0F2FE" font-size="10" font-weight="800">S3 아들러하펜</text>
+    </g>
+
+    
+    <g id="sector-s1">
+      <path id="poly-s1" d="M 386 172 L 474 170 L 494 218 L 462 252 L 390 248 L 378 206 Z" fill="#2E2412" stroke="#E2C07D" stroke-width="1.8" />
+      <text x="435" y="210" text-anchor="middle" fill="#FEF3C7" font-size="10.5" font-weight="800">★ S1 아이젠크로네</text>
+      <text x="435" y="224" text-anchor="middle" fill="#E2C07D" font-size="8.5" font-weight="700">(제국 수도)</text>
+    </g>
+
+    
+    <g id="sector-s4">
+      <path id="poly-s4" d="M 506 152 L 602 148 L 614 206 L 584 248 L 512 242 L 498 194 Z" fill="#123047" stroke="#38BDF8" stroke-width="1.5" />
+      <text x="558" y="201" text-anchor="middle" fill="#E0F2FE" font-size="10" font-weight="800">S4 오스트마르크</text>
+    </g>
+
+    
+    <g id="sector-s5">
+      <path id="poly-s5" d="M 366 268 L 478 266 L 496 320 L 434 344 L 368 326 L 356 292 Z" fill="#450A0A" stroke="#EF4444" stroke-width="1.6" />
+      <text x="426" y="303" text-anchor="middle" fill="#FEE2E2" font-size="10" font-weight="800">⚠ S5 쥐트란트</text>
+      <text x="426" y="317" text-anchor="middle" fill="#FCA5A5" font-size="8.5" font-weight="700">[통제 상실]</text>
+    </g>
+
+    
+    <g id="sector-s6">
+      <path id="poly-s6" d="M 522 268 L 584 264 L 608 298 L 578 338 L 526 328 L 514 294 Z" fill="#123047" stroke="#38BDF8" stroke-width="1.5" />
+      <text x="562" y="303" text-anchor="middle" fill="#E0F2FE" font-size="10" font-weight="800">S6 아우터림</text>
+    </g>
+
+    
+    <rect x="280" y="368" width="11" height="11" rx="2" fill="#123047" stroke="#38BDF8" stroke-width="1.2" />
+    <text x="296" y="378" fill="#CBD5E1" font-size="10">제국 통제령</text>
+
+    <rect x="372" y="368" width="11" height="11" rx="2" fill="#451A03" stroke="#F59E0B" stroke-width="1.2" />
+    <text x="388" y="378" fill="#CBD5E1" font-size="10">계엄·분쟁지</text>
+
+    <rect x="466" y="368" width="11" height="11" rx="2" fill="#450A0A" stroke="#EF4444" stroke-width="1.2" />
+    <text x="482" y="378" fill="#FCA5A5" font-size="10">통제 상실(반란)</text>
+  </g>
+
+  
+  
+  <g id="stat-stability">
+    <rect x="650" y="78" width="250" height="72" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#1E293B" stroke-width="1" />
+    <text x="664" y="99" fill="#CBD5E1" font-size="11.5" font-weight="700">국가 안정도 <tspan fill="#64748B" font-size="9.5">STABILITÄT</tspan></text>
+    <text id="val-stability" x="886" y="100" text-anchor="end" fill="#E2C07D" font-size="14.5" font-weight="800">94.2%</text>
+    <rect x="664" y="111" width="222" height="9" rx="2" fill="#07090D" stroke="#334155" stroke-width="0.8" />
+    <rect id="bar-stability" x="664" y="111" width="209.1" height="9" rx="2" fill="url(#goldGrad)" />
+    <text id="sub-stability" x="664" y="137" fill="#94A3B8" font-size="9.5">중앙 치안망 정상 · S5 구역 봉쇄 작전 중</text>
+  </g>
+
+  
+  <g id="stat-population">
+    <rect x="650" y="159" width="250" height="72" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#1E293B" stroke-width="1" />
+    <text x="664" y="180" fill="#CBD5E1" font-size="11.5" font-weight="700">통치 인구 수 <tspan fill="#64748B" font-size="9.5">BEVÖLKERUNG</tspan></text>
+    <text id="val-population" x="886" y="181" text-anchor="end" fill="#38BDF8" font-size="14.5" font-weight="800">84.62 억</text>
+    <rect x="664" y="192" width="222" height="9" rx="2" fill="#07090D" stroke="#334155" stroke-width="0.8" />
+    <rect id="bar-population" x="664" y="192" width="187.9" height="9" rx="2" fill="url(#cyanGrad)" />
+    <text id="sub-population" x="664" y="218" fill="#94A3B8" font-size="9.5">알테아 등록 시민 · 수용 한계 100.0 억</text>
+  </g>
+
+  
+  <g id="stat-development">
+    <rect x="650" y="240" width="250" height="72" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#1E293B" stroke-width="1" />
+    <text x="664" y="261" fill="#CBD5E1" font-size="11.5" font-weight="700">기술·산업 발전도 <tspan fill="#64748B" font-size="9.5">ENTWICKLUNG</tspan></text>
+    <text id="val-development" x="886" y="262" text-anchor="end" fill="#38BDF8" font-size="14.5" font-weight="800">88.5%</text>
+    <rect x="664" y="273" width="222" height="9" rx="2" fill="#07090D" stroke="#334155" stroke-width="0.8" />
+    <rect id="bar-development" x="664" y="273" width="196.5" height="9" rx="2" fill="url(#cyanGrad)" />
+    <text id="sub-development" x="664" y="299" fill="#94A3B8" font-size="9.5">발할라-IX 코어 연산 효율 99.1% 유지</text>
+  </g>
+
+  
+  <g id="stat-risk">
+    <rect x="650" y="321" width="250" height="73" rx="5" fill="#0F1520" fill-opacity="0.92" stroke="#1E293B" stroke-width="1" />
+    <text x="664" y="342" fill="#CBD5E1" font-size="11.5" font-weight="700">사상 위험도 <tspan fill="#64748B" font-size="9.5">GEDANKENRISIKO</tspan></text>
+    <text id="val-risk" x="886" y="343" text-anchor="end" fill="#F87171" font-size="14.5" font-weight="800">12.4%</text>
+    <rect x="664" y="354" width="222" height="9" rx="2" fill="#07090D" stroke="#334155" stroke-width="0.8" />
+    <rect id="bar-risk" x="664" y="354" width="27.5" height="9" rx="2" fill="url(#riskGrad)" />
+    
+    <line x1="882.4" y1="351" x2="882.4" y2="366" stroke="#FCA5A5" stroke-width="1.5" />
+    <text id="sub-risk" x="664" y="380" fill="#94A3B8" font-size="9.5">구금 임계선 98.4% 미만 · 감시망 가동</text>
+  </g>
+
+  
+  <g id="hud-footer">
+    <rect x="20" y="406" width="880" height="38" rx="4" fill="#0F172A" stroke="#C5A059" stroke-width="1" stroke-opacity="0.55" />
+    <rect x="30" y="414" width="90" height="22" rx="3" fill="#C5A059" fill-opacity="0.2" stroke="#C5A059" stroke-width="0.8" />
+    <text x="75" y="429" text-anchor="middle" fill="#E2C07D" font-size="10.5" font-weight="800" letter-spacing="0.8">DIREKTIVE</text>
+    <text id="val-directive" x="132" y="429" fill="#E2E8F0" font-size="11.5">최고 사령부 브리핑: S5 쥐트란트 반란군 진압 병력 배치 완료. 다음 칙령을 대기합니다.</text>
+  </g>
+</svg>
