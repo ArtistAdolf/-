@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const {
-    turn = '1',
+    turn = '턴 수',
     date = '2048.03',
     alert = 'STUFE I',
     name = '카를_폰_아이젠하르트',
